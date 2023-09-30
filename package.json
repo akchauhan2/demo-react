@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://dev.akchauhan2.com/demo",
+  "homepage": "/demo",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
