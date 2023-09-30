@@ -6,17 +6,18 @@ import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
 import { SidebarProvider } from './contexts/SidebarContext';
 
-import ThemeProvider from './theme/ThemeProvider';
+import ThemeProviderWrapper from './theme/ThemeProvider';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
-      <ThemeProvider>
+      <ThemeProviderWrapper>
         <SidebarProvider>
           <BrowserRouter>
             <App />
           </BrowserRouter>
         </SidebarProvider>
-      </ThemeProvider>
+      </ThemeProviderWrapper>
     </HelmetProvider>
   </React.StrictMode>
 );
