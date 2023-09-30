@@ -9,8 +9,7 @@ import {
   useTheme,
   Button,
   lighten,
-  darken,
-  Tooltip
+  darken
 } from '@mui/material';
 
 import SidebarMenu from './SidebarMenu';

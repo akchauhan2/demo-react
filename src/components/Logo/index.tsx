@@ -1,5 +1,4 @@
 import { styled } from '@mui/material';
-import React from 'react';
 import { Link } from 'react-router-dom';
 const LogoWrapper = styled(Link)(
   ({ theme }) => `
@@ -10,9 +9,8 @@ const LogoWrapper = styled(Link)(
         font-weight: ${theme.typography.fontWeightBold};
 `
 );
-type Props = {};
 
-function Logo({}: Props) {
+function Logo() {
   return <LogoWrapper to="/overview">Akchauhan2.com</LogoWrapper>;
 }
 

@@ -18,6 +18,7 @@ const Scrollbar: FC<ScrollbarProps> = ({ className, children, ...rest }) => {
       renderThumbVertical={() => {
         return (
           <Box
+            className={className}
             sx={{
               width: 5,
               background: `${theme.colors.alpha.black[10]}`,
