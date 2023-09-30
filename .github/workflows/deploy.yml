@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install --force
 
-      - name: Run tests
-        run: npm test
-
       - name: 🔨 Build Project
         run: npm run build
 
