@@ -63,7 +63,7 @@ const ListWrapper = styled(Box)(
 );
 
 function HeaderMenu() {
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef(null);
   const [isOpen, setOpen] = useState<boolean>(false);
 
   const handleOpen = (): void => {
@@ -109,7 +109,6 @@ function HeaderMenu() {
           </ListItem>
           <ListItem
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             ref={ref}
             onClick={handleOpen}
           >
