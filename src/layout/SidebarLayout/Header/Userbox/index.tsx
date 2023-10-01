@@ -22,6 +22,7 @@ import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
+import { MAIN_PAGE } from '../../../../router';
 
 const UserBoxButton = styled(Button)(
   ({ theme }) => `
@@ -116,17 +117,25 @@ function HeaderUserbox() {
         </MenuUserBox>
         <Divider sx={{ mb: 0 }} />
         <List sx={{ p: 1 }} component="nav">
-          <ListItem button to="/management/profile/details" component={NavLink}>
+          <ListItem
+            button
+            to={MAIN_PAGE + '/management/profile/details'}
+            component={NavLink}
+          >
             <AccountBoxTwoToneIcon fontSize="small" />
             <ListItemText primary="My Profile" />
           </ListItem>
-          <ListItem button to="/dashboards/story" component={NavLink}>
+          <ListItem
+            button
+            to={MAIN_PAGE + '/dashboards/story'}
+            component={NavLink}
+          >
             <InboxTwoToneIcon fontSize="small" />
             <ListItemText primary="Story" />
           </ListItem>
           <ListItem
             button
-            to="/management/profile/settings"
+            to={MAIN_PAGE + '/management/profile/settings'}
             component={NavLink}
           >
             <AccountTreeTwoToneIcon fontSize="small" />

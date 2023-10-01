@@ -23,7 +23,7 @@ const Status: FC<{ heading?: string; buttons?: Buttons }> = ({
   buttons = [
     {
       title: 'Go Back',
-      to: '/'
+      to: MAIN_PAGE
     }
   ]
 }) => {
@@ -62,7 +62,7 @@ const Status: FC<{ heading?: string; buttons?: Buttons }> = ({
 const Generic: FC = () => {
   const location = useLocation();
 
-  return <Status heading={location.pathname} />;
+  return <Status heading={location.pathname.replace(MAIN_PAGE, '')} />;
 };
 
 type Button = {
@@ -71,113 +71,136 @@ type Button = {
 };
 type Buttons = Button[];
 
-const Iframe: FC<{ src: string }> = ({ src }) => (
-  <iframe width={'100%'} height={'100%'} src={src}></iframe>
-);
+const Iframe: FC<{ src: string }> = ({ src }) => {
+  const location = useLocation();
+
+  return (
+    <Box
+      sx={{
+        height: '100%',
+        gap: '.5em',
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
+      <Typography variant="h3" align="center">
+        {location.pathname.replace(MAIN_PAGE, '')}
+      </Typography>
+      <iframe width={'100%'} style={{ flex: 1 }} src={src}></iframe>
+    </Box>
+  );
+};
+export const MAIN_PAGE = '/demo';
 
 const routes: RouteObject[] = [
   {
-    path: '/login',
-    element: <BaseLayout />
-  },
-  {
-    path: '/dashboards',
-    element: <SidebarLayout />,
-    children: [
-      {
-        path: 'crypto',
-        element: <Iframe src="//dev.akchauhan2.com/crypto" />
-      },
-      {
-        path: 'story',
-        element: <Iframe src="//dev.akchauhan2.com/story" />
-      },
-
-      {
-        path: '*',
-        element: <Generic />
-      }
-    ]
-  },
-  {
-    path: '/components',
-    element: <SidebarLayout />,
-    children: [
-      {
-        path: 'buttons',
-        element: (
-          <Iframe src="//dev.akchauhan2.com/story/?path=/story/components-button--red" />
-        )
-      },
-      {
-        path: 'stack',
-        element: (
-          <Iframe src="//dev.akchauhan2.com/story/?path=/story/components-stack--horizontal" />
-        )
-      },
-      {
-        path: '*',
-        element: <Generic />
-      }
-    ]
-  },
-  {
-    path: '/management',
-    element: <SidebarLayout />,
-    children: [
-      {
-        path: 'windows',
-        element: <Iframe src="//dev.akchauhan2.com/w11" />
-      },
-      {
-        path: '*',
-        element: <Generic />
-      }
-    ]
-  },
-  {
-    path: '/status',
+    path: MAIN_PAGE,
     element: <BaseLayout />,
     children: [
       {
-        path: '404',
-        element: <Status heading="404: Not Found" />
+        path: 'login',
+        element: <BaseLayout />
       },
       {
-        path: '500',
-        element: (
-          <Status
-            heading="500: Not Found"
-            buttons={[
-              {
-                title: 'Go Back',
-                to: '/'
-              },
-              {
-                title: 'Home',
-                to: '/'
-              }
-            ]}
-          />
-        )
+        path: 'dashboards',
+        element: <SidebarLayout />,
+        children: [
+          {
+            path: 'crypto',
+            element: <Iframe src="//dev.akchauhan2.com/crypto" />
+          },
+          {
+            path: 'story',
+            element: <Iframe src="//dev.akchauhan2.com/story" />
+          },
+
+          {
+            path: '*',
+            element: <Generic />
+          }
+        ]
       },
       {
-        path: '*',
-        element: <Status heading="Under Maintenance" />
-      }
-    ]
-  },
-  {
-    path: '/',
-    element: <SidebarLayout />,
-    children: [
-      {
-        path: 'overview',
-        element: <Overview />
+        path: 'components',
+        element: <SidebarLayout />,
+        children: [
+          {
+            path: 'buttons',
+            element: (
+              <Iframe src="//dev.akchauhan2.com/story/?path=/story/components-button--red" />
+            )
+          },
+          {
+            path: 'stack',
+            element: (
+              <Iframe src="//dev.akchauhan2.com/story/?path=/story/components-stack--horizontal" />
+            )
+          },
+          {
+            path: '*',
+            element: <Generic />
+          }
+        ]
       },
       {
-        path: '*',
-        element: <Generic />
+        path: 'management',
+        element: <SidebarLayout />,
+        children: [
+          {
+            path: 'windows',
+            element: <Iframe src="//dev.akchauhan2.com/w11" />
+          },
+          {
+            path: '*',
+            element: <Generic />
+          }
+        ]
+      },
+      {
+        path: 'status',
+        element: <BaseLayout />,
+        children: [
+          {
+            path: '404',
+            element: <Status heading="404: Not Found" />
+          },
+          {
+            path: '500',
+            element: (
+              <Status
+                heading="500: Not Found"
+                buttons={[
+                  {
+                    title: 'Go Back',
+                    to: MAIN_PAGE
+                  },
+                  {
+                    title: 'Home',
+                    to: MAIN_PAGE
+                  }
+                ]}
+              />
+            )
+          },
+          {
+            path: '*',
+            element: <Status heading="Under Maintenance" />
+          }
+        ]
+      },
+      {
+        path: '',
+        element: <SidebarLayout />,
+        children: [
+          {
+            path: 'overview',
+            element: <Overview />
+          },
+          {
+            path: '*',
+            element: <Generic />
+          }
+        ]
       }
     ]
   }

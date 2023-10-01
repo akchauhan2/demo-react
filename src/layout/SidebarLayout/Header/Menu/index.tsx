@@ -10,6 +10,7 @@ import { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
+import { MAIN_PAGE } from '../../../../router';
 
 const ListWrapper = styled(Box)(
   ({ theme }) => `
@@ -89,7 +90,7 @@ function HeaderMenu() {
             classes={{ root: 'MuiListItem-indicators' }}
             button
             component={NavLink}
-            to="/components/buttons"
+            to={MAIN_PAGE + '/components/buttons'}
           >
             <ListItemText
               primaryTypographyProps={{ noWrap: true }}
@@ -100,7 +101,7 @@ function HeaderMenu() {
             classes={{ root: 'MuiListItem-indicators' }}
             button
             component={NavLink}
-            to="/components/forms"
+            to={MAIN_PAGE + '/components/forms'}
           >
             <ListItemText
               primaryTypographyProps={{ noWrap: true }}
@@ -127,16 +128,32 @@ function HeaderMenu() {
         </List>
       </ListWrapper>
       <Menu anchorEl={ref.current} onClose={handleClose} open={isOpen}>
-        <MenuItem sx={{ px: 3 }} component={NavLink} to="/overview">
+        <MenuItem
+          sx={{ px: 3 }}
+          component={NavLink}
+          to={MAIN_PAGE + '/overview'}
+        >
           Overview
         </MenuItem>
-        <MenuItem sx={{ px: 3 }} component={NavLink} to="/components/tabs">
+        <MenuItem
+          sx={{ px: 3 }}
+          component={NavLink}
+          to={MAIN_PAGE + '/components/tabs'}
+        >
           Tabs
         </MenuItem>
-        <MenuItem sx={{ px: 3 }} component={NavLink} to="/components/cards">
+        <MenuItem
+          sx={{ px: 3 }}
+          component={NavLink}
+          to={MAIN_PAGE + '/components/cards'}
+        >
           Cards
         </MenuItem>
-        <MenuItem sx={{ px: 3 }} component={NavLink} to="/components/stack">
+        <MenuItem
+          sx={{ px: 3 }}
+          component={NavLink}
+          to={MAIN_PAGE + '/components/stack'}
+        >
           Stack
         </MenuItem>
       </Menu>

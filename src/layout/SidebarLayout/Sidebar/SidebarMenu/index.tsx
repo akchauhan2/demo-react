@@ -31,6 +31,7 @@ import WorkspacePremiumTwoToneIcon from '@mui/icons-material/WorkspacePremiumTwo
 import CameraFrontTwoToneIcon from '@mui/icons-material/CameraFrontTwoTone';
 import DisplaySettingsTwoToneIcon from '@mui/icons-material/DisplaySettingsTwoTone';
 import { SidebarContext } from '../../../../contexts/SidebarContext';
+import { MAIN_PAGE } from '../../../../router';
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -188,7 +189,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/overview"
+                  to={MAIN_PAGE + '/overview'}
                   startIcon={<DesignServicesTwoToneIcon />}
                 >
                   Overview
@@ -212,7 +213,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/dashboards/crypto"
+                  to={MAIN_PAGE + '/dashboards/crypto'}
                   startIcon={<BrightnessLowTwoToneIcon />}
                 >
                   Cryptocurrency
@@ -223,7 +224,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/dashboards/story"
+                  to={MAIN_PAGE + '/dashboards/story'}
                   startIcon={<MmsTwoToneIcon />}
                 >
                   Story
@@ -247,7 +248,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/management/windows"
+                  to={MAIN_PAGE + '/management/windows'}
                   startIcon={<TableChartTwoToneIcon />}
                 >
                   Windows
@@ -271,7 +272,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/management/profile/details"
+                  to={MAIN_PAGE + '/management/profile/details'}
                   startIcon={<AccountCircleTwoToneIcon />}
                 >
                   User Profile
@@ -282,7 +283,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/management/profile/settings"
+                  to={MAIN_PAGE + '/management/profile/settings'}
                   startIcon={<DisplaySettingsTwoToneIcon />}
                 >
                   Account Settings
@@ -306,7 +307,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/buttons"
+                  to={MAIN_PAGE + '/components/buttons'}
                   startIcon={<BallotTwoToneIcon />}
                 >
                   Buttons
@@ -317,7 +318,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/stack"
+                  to={MAIN_PAGE + '/components/stack'}
                   startIcon={<BeachAccessTwoToneIcon />}
                 >
                   Stack
@@ -328,7 +329,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/accordions"
+                  to={MAIN_PAGE + '/components/accordions'}
                   startIcon={<EmojiEventsTwoToneIcon />}
                 >
                   Accordions
@@ -339,7 +340,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/tabs"
+                  to={MAIN_PAGE + '/components/tabs'}
                   startIcon={<FilterVintageTwoToneIcon />}
                 >
                   Tabs
@@ -350,7 +351,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/badges"
+                  to={MAIN_PAGE + '/components/badges'}
                   startIcon={<HowToVoteTwoToneIcon />}
                 >
                   Badges
@@ -361,7 +362,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/tooltips"
+                  to={MAIN_PAGE + '/components/tooltips'}
                   startIcon={<LocalPharmacyTwoToneIcon />}
                 >
                   Tooltips
@@ -372,7 +373,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/avatars"
+                  to={MAIN_PAGE + '/components/avatars'}
                   startIcon={<RedeemTwoToneIcon />}
                 >
                   Avatars
@@ -383,7 +384,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/cards"
+                  to={MAIN_PAGE + '/components/cards'}
                   startIcon={<SettingsTwoToneIcon />}
                 >
                   Cards
@@ -394,7 +395,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/components/forms"
+                  to={MAIN_PAGE + '/components/forms'}
                   startIcon={<TrafficTwoToneIcon />}
                 >
                   Forms
@@ -418,7 +419,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/404"
+                  to={MAIN_PAGE + '/status/404'}
                   startIcon={<CheckBoxTwoToneIcon />}
                 >
                   Error 404
@@ -429,7 +430,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/500"
+                  to={MAIN_PAGE + '/status/500'}
                   startIcon={<CameraFrontTwoToneIcon />}
                 >
                   Error 500
@@ -440,7 +441,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/coming-soon"
+                  to={MAIN_PAGE + '/status/coming-soon'}
                   startIcon={<ChromeReaderModeTwoToneIcon />}
                 >
                   Coming Soon
@@ -451,7 +452,7 @@ function SidebarMenu() {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/maintenance"
+                  to={MAIN_PAGE + '/status/maintenance'}
                   startIcon={<WorkspacePremiumTwoToneIcon />}
                 >
                   Maintenance
