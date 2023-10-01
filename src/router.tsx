@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { RouteObject, useLocation, useParams } from 'react-router';
+import { RouteObject, useLocation } from 'react-router';
 import BaseLayout from './layout/BaseLayout';
 import SidebarLayout from './layout/SidebarLayout';
 import { Link } from 'react-router-dom';
@@ -14,9 +14,6 @@ const LinkWrapper = styled(Link)(
         font-weight: ${theme.typography.fontWeightBold};
 `
 );
-const Overview: FC = () => {
-  return <h1>Overview</h1>;
-};
 
 const Status: FC<{ heading?: string; buttons?: Buttons }> = ({
   heading = 'Not Found',
@@ -27,15 +24,6 @@ const Status: FC<{ heading?: string; buttons?: Buttons }> = ({
     }
   ]
 }) => {
-  const params = useParams();
-  const location = useLocation();
-
-  console.log({
-    overview: {},
-    location,
-    params
-  });
-
   return (
     <Box
       sx={{
@@ -99,7 +87,14 @@ const routes: RouteObject[] = [
     children: [
       {
         path: 'login',
-        element: <BaseLayout />
+        element: (
+          <BaseLayout>
+            <Typography variant="h1" align="center">
+              Not Found
+            </Typography>
+            <Generic />
+          </BaseLayout>
+        )
       },
       {
         path: 'dashboards',
@@ -194,7 +189,7 @@ const routes: RouteObject[] = [
         children: [
           {
             path: 'overview',
-            element: <Overview />
+            element: <Iframe src="//akchauhan2.com" />
           },
           {
             path: '*',
@@ -203,6 +198,10 @@ const routes: RouteObject[] = [
         ]
       }
     ]
+  },
+  {
+    path: '',
+    element: <BaseLayout>Welcome</BaseLayout>
   }
 ];
 

@@ -80,7 +80,7 @@ function Sidebar() {
         />
         <Box p={2}>
           <Button
-            href="https://bloomui.com"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
             variant="contained"
@@ -88,7 +88,7 @@ function Sidebar() {
             size="small"
             fullWidth
           >
-            Upgrade to PRO
+            HOME
           </Button>
         </Box>
       </SidebarWrapper>

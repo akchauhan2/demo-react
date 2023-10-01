@@ -172,7 +172,7 @@ function HeaderSearch() {
                       sx={{ fontWeight: 'bold' }}
                       variant="body2"
                     >
-                      Dashboard for Healthcare Platform
+                      Akchauhan2 Dashboard and sidebar
                     </Link>
                   </Box>
                   <Typography
@@ -183,8 +183,8 @@ function HeaderSearch() {
                         lighten(theme.palette.secondary.main, 0.5)
                     }}
                   >
-                    This page contains all the necessary information for
-                    managing all hospital staff.
+                    This page contains all the necessary information of
+                    akchauhan2.com.
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
@@ -260,8 +260,8 @@ function HeaderSearch() {
                         lighten(theme.palette.secondary.main, 0.5)
                     }}
                   >
-                    Choose if you would like to show or not this typography
-                    section here...
+                    Edit this section if you would like to show something else
+                    here...
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
